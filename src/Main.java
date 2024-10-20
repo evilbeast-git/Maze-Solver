@@ -85,7 +85,6 @@ public class Main extends Canvas implements Runnable, MouseListener {
 				try {
 					runTimeMain.openMaze();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 
@@ -97,7 +96,6 @@ public class Main extends Canvas implements Runnable, MouseListener {
 				try {
 					runTimeMain.saveMaze();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 

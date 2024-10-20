@@ -11,7 +11,7 @@ import java.util.Stack;
 
 public class Algorithm {
 	
-	private int searchtime = 100;
+	// private int searchtime = 100;
 	
 	public int getSearchTime() {
 		return searchtime;
@@ -115,49 +115,6 @@ public class Algorithm {
 		}
 	}
 
-	public void Astar(Node start, Node targetNode,  int graphWidth, int graphHeight) {
-		List<Node> openList = new ArrayList<Node>();
-		Node[][] prev = new Node[graphWidth][graphHeight];
-		openList.add(start);
-		
-		while(!openList.isEmpty()) {
-			
-			Node curNode = getLeastHeuristic(openList,targetNode,start);
-			openList.remove(curNode);
-			
-			if(curNode.isEnd()) {
-				curNode.setColor(Color.MAGENTA);
-				break;
-			}
-			curNode.setColor(Color.ORANGE);
-			try {
-				Thread.sleep(searchtime);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			curNode.setColor(Color.BLUE);
-			for (Node adjacent : curNode.getNeighbours()) {
-				if(adjacent.isSearched()) {
-					continue;
-				}
-				double f1 = Node.distance(adjacent, targetNode);
-				double h1 = Node.distance(curNode, start);
-						
-				double f2 = Node.distance(adjacent, targetNode);
-				double h2 = Node.distance(curNode, start);
-				
-				if(!openList.contains(adjacent) || (f1 + h1 < f2 + h2)) {
-					prev[adjacent.getX()][adjacent.getY()] = curNode;
-					if(!openList.contains(adjacent)){
-						openList.add(adjacent);
-					}
-				}
-			}
-			
-		}
-		shortpath(prev, targetNode);
-		
-	}
 
 
 }
