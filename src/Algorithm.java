@@ -11,7 +11,7 @@ import java.util.Stack;
 
 public class Algorithm {
 	
-	// private int searchtime = 100;
+	private int searchtime = 100;
 	
 	public int getSearchTime() {
 		return searchtime;
